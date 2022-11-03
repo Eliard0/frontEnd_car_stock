@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.card-body {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  top: 4em;
+}
+
+.width_input {
+  width: 40em;
+}
+
+.button {
+  text-align: center;
+}
