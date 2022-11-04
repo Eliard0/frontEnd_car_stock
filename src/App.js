@@ -11,21 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Cadastro />} />
-          <Route path="/lista" element={<ListCarro/>}
-            // typeof listCarros !== "undefined" &&
-            // listCarros.map((value) => {
-            //   return <ListCarro
-            //     key={value.id}
-            //     id={value.id}
-            //     marca={value.marca}
-            //     modelo={value.modelo}
-            //     cor={value.cor}
-            //     ano={value.ano_fabricacao}
-            //     ano_modelo={value.ano_modelo}
-            //     cambio={value.tipo_cambio}
-            //   />
-            // })}
-          />
+          <Route path="/lista" element={<ListCarro/>}/>
         </Routes>
       </BrowserRouter>
     </div>

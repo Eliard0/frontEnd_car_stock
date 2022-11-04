@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 export default function ListCarro() {
 
@@ -52,6 +54,7 @@ export default function ListCarro() {
           {dados}
         </tbody>
       </table>
+      <Link className="btn btn-primary" to="/">Voltar</Link>
     </div>
   )
 }

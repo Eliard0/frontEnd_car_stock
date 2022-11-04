@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Cadastro = () => {
 
@@ -29,7 +30,7 @@ const Cadastro = () => {
         <div className='container-fluid'>
 
             <div className="ml-5 mr-5 mt-5 card text-center">
-                <button className="btn btn-primary">Ver lista de carros</button>
+                <Link className="btn btn-primary" to="/lista">Ver lista de carros</Link>
                 <div className="card-header">
                     <h5>
                         Cadastro de veiculo
