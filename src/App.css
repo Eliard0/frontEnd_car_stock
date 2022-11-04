@@ -16,6 +16,23 @@
   width: 40em;
 }
 
-.button {
+
+.buttonCadastrar {
   text-align: center;
+}
+
+.table {
+  border: ridge;
+}
+
+@media screen and (max-width: 1024px) {
+  .width_input {
+    width: 37em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .width_input {
+    width: 12em;
+  }
 }
