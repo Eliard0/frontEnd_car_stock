@@ -18,7 +18,7 @@ export default function ListCarro() {
     listCarros.filter((value) => {
       if (filtro === "") {
       return listCarros;
-      } else if (value.tipo_cambio.includes(filtro)) {
+      } else if (value.tipo_cambio.toLowerCase().includes(filtro.toLowerCase())) {
         return value;
       }
     }).map((c) => {
