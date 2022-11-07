@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 export default function ListCarro() {
 
   const [listCarros, setListCarros] = useState();
+  // const [filtro, setFiltro] = useState();
+
+  // const filtrado = listCarros.filter((dadoFiltrado) => dadoFiltrado.toLowerCase().includes(filtro.toLowerCase()));
 
   useEffect(() => {
     Axios.get("http://localhost:3003/getCarros").then((response) => {
@@ -14,9 +17,9 @@ export default function ListCarro() {
   }, []);
 
   const dados = typeof listCarros !== "undefined" &&
-    listCarros.map((c, i) => {
-      return <tr>
-        <td key={i.id}> {c.id} </td>
+    listCarros.map((c) => {
+      return <tr key={c.id}>
+        <td > {c.id} </td>
         <td> {c.marca} </td>
         <td> {c.modelo} </td>
         <td> {c.cor} </td>
@@ -26,18 +29,15 @@ export default function ListCarro() {
       </tr>
     });
 
-  console.log(listCarros);
   return (
     <div className='ml-5 mr-5 mt-5'>
       <h2>Lista de Carros</h2>
-      <label>
-        <span>Tipo de Cambio:</span>
-        <select className="form-control" name="cambio">
-          <option>Selecione</option>
-          <option value="manual">Manual</option>
-          <option value="automatico">Automático</option>
-        </select>
-      </label>
+      {/* <label>
+        <span>selecione o tipo de cambio: </span>
+        <input type="text"
+          value={filtro}
+          onChange={(ev) => setFiltro(ev.target.value)} />
+      </label> */}
       <table className="table ">
         <thead>
           <tr>

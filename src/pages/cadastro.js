@@ -79,7 +79,7 @@ const Cadastro = () => {
                             </label>
                         </div>
                         <div className="buttonCadastrar">
-                            <button className="btn btn-primary" onClick={() => handleSubmit()}>Cadastrar</button>
+                            <Link to="/lista" className="btn btn-primary" onClick={() => handleSubmit()}>Cadastrar</Link>
                         </div>
                     </form>
                 </div>
