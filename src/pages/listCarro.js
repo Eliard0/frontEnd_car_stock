@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 export default function ListCarro() {
 
   const [listCarros, setListCarros] = useState();
-  // const [filtro, setFiltro] = useState();
-
-  // const filtrado = listCarros.filter((dadoFiltrado) => dadoFiltrado.toLowerCase().includes(filtro.toLowerCase()));
+  const [filtro, setFiltro] = useState("");
 
   useEffect(() => {
     Axios.get("http://localhost:3003/getCarros").then((response) => {
@@ -17,7 +15,13 @@ export default function ListCarro() {
   }, []);
 
   const dados = typeof listCarros !== "undefined" &&
-    listCarros.map((c) => {
+    listCarros.filter((value) => {
+      if (filtro === "") {
+      return listCarros;
+      } else if (value.tipo_cambio.includes(filtro)) {
+        return value;
+      }
+    }).map((c) => {
       return <tr key={c.id}>
         <td > {c.id} </td>
         <td> {c.marca} </td>
@@ -32,12 +36,12 @@ export default function ListCarro() {
   return (
     <div className='ml-5 mr-5 mt-5'>
       <h2>Lista de Carros</h2>
-      {/* <label>
+      <label>
         <span>selecione o tipo de cambio: </span>
         <input type="text"
           value={filtro}
           onChange={(ev) => setFiltro(ev.target.value)} />
-      </label> */}
+      </label>
       <table className="table ">
         <thead>
           <tr>
